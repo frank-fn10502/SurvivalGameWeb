@@ -1,0 +1,216 @@
+﻿
+@{
+    ViewBag.Title = "商品清單";
+}
+
+<div class="container-xl">
+    <div class="row">
+        <div class="col-3">
+            <div class="ControlPanel">
+                <select class="form-control ClassSelector" id="ClassSelector" readonly>
+                    <option>服裝</option>
+                    <option>槍枝</option>
+                    <option>配件</option>
+                </select>
+                <div class="accordion" id="Classification">
+                    <div class="card">
+                        <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false">
+                            廠牌
+                        </div>
+                        <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#Classification">
+                            <div class="card-body">
+                                <input type="checkbox" id="inlineCheckbox1" value="option1">
+                                <div class="btn btn-light Condition">
+                                    <label for="inlineCheckbox1"></label>
+                                    <span>
+                                        Asus
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false">
+                            價錢
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#Classification">
+                            <div class="card-body">
+                                t2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false">
+                            重量
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#Classification">
+                            <div class="card-body">
+                                t3
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="DisplayPanel">
+                <div class="SearchCount">
+                    <span class="Total">
+                        相關商品:
+                        <span>197</span>
+                        項
+                    </span>
+                    <span class="PageInfo">
+                        顯示<span> 1 - 20 </span>項
+                        (共計<span> 8 </span>頁)
+                    </span>
+                </div>
+                <div class="OrderTypeGroup">
+                    <div class="OrderType">
+                        <span class="title">預設</span>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="OrderType">
+                        <span class="title">人氣</span>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="OrderType">
+                        <span class="title">價格</span>
+                        <span class="icon"></span>
+                    </div>
+                    <div class="OrderType">
+                        <span class="title">新品</span>
+                        <span class="icon"></span>
+                    </div>
+                </div>
+                <div class="ProductGroup">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="card">
+                            <div class="pic">
+                                <div class="Frame">
+                                    <div class="Item">
+                                        <img src="https://picsum.photos/400/300/?random=10">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="ProductTitle">這是一個東西的名稱</h3>
+                                <p class="Price">
+                                    <span class="CurrentPrice">$34,900</span>
+                                    <span class="OriginPrice">$59,999</span>
+                                </p>
+                                <div class="ButtonGroup">
+                                    <button class="btn like">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button class="btn cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav aria-label="product page" class="page">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="CategoryPattern">
+    <div class="card">
+        <div class="card-header" id="heading{{index}}" data-toggle="collapse" data-target="#collapse{{index}}" aria-expanded="false">
+            {{categoryTitle}}
+        </div>
+        <div id="collapse{{index}}" class="collapse " aria-labelledby="heading{{index}}" data-parent="#Classification">
+            <div class="card-body">
+                {{categoryItemList}}
+            </div>
+        </div>
+    </div>
+</template>
+<template id="CategoryItem">
+    <div class="Item">
+        <input type="checkbox" id="{{index}}checkbox" value="option1">
+        <div class="btn btn-light Condition">
+            <label for="{{index}}checkbox"></label>
+            <span>
+                {{Name}}
+            </span>
+        </div>
+    </div>
+</template>
+<template id="ProductCardPattern">
+    <div class="col-6 col-md-4 col-lg-3">
+        <div class="card">
+            <div class="pic">
+                <div class="Frame">
+                    <div class="Item">
+                        {{img}}<!--可能會改成多張圖-->
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h3 class="ProductTitle">{{name}}</h3>
+                <p class="Price">
+                    <span class="CurrentPrice">${{price}}</span>
+                    <span class="OriginPrice">${{onsalePrice}}</span>
+                </p>
+                <div class="ButtonGroup">
+                    <button class="btn like">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="btn cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+@section topCss
+{
+    <link href="~/Assets/css/productMenu/reset.css" rel="stylesheet" />
+    <link href="~/Assets/css/productMenu/productMenu.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/95fe5e2d81.js" crossorigin="anonymous"></script>
+}
+@section bottomJs
+{
+    <script src="~/Assets/javaScript/productMenu/ExteriorHelper.js"></script>
+    <script src="~/Assets/javaScript/productMenu/productMenu.js"></script>
+    <script>
+        @*@Url.Action(action,controller) @Url.Action("Index","Home")*@
+        window.onload = () => {
+            initPage();
+            let productPanel = document.querySelectorAll('.ProductGroup .card');
+            productPanel.forEach(x => {
+                x.addEventListener('click', (e) => {
+                    window.location.href = '@Url.Action("About","Home")';
+                });
+            });
+        }
+    </script>
+}
