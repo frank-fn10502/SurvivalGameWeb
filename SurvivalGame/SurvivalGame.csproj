@@ -168,6 +168,8 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Assets\css\productMenu\productMenu.css.map" />
     <Content Include="Assets\css\productMenu\productMenu.scss" />
+    <Content Include="Assets\xlsxData\Gun.xlsx" />
+    <Content Include="Assets\xlsxData\彈匣.xlsx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
