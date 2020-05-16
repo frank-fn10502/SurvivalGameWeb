@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Title,
+.content,
+.RowLink {
+    text-align: center;
+}
+
+.Title {
+    margin: 20px 0;
+}
+
+.content {
+    border: 5px double rgb(46, 12, 85);
+    padding: 20px 0;
+}
+
+label,
+a {
+    font-size: large;
+    font-family: sans-serif;
+}
+
+input,
+button {
+    margin: 10px 0 20px 0;
+    border-radius: 2px;
+}
+
+.modal-header {
+    background-color: rgb(56, 55, 55);
+    color: #fff;
+}
+
+.container-fluid .row {
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.LawArea {
+    padding: 5px 0px 5px 0px;
+}
+
+.BirthBox {
+    position: relative;
+    display: inline;
+}
+
+.Birth18 {
+    font-size: 10px;
+    color: red;
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+}
+
+#Look {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(56, 168, 243);
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(201, 162, 34);
+}
+
+hr {
+    border: 1px dashed #000;
+}
+
+.LawContent {
+    margin: 0 10px 0 10px;
+}
+
+.Submit {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 767px) {
+    input {
+        text-align: center;
+    }
+
+    .col-2 {
+        max-width: 100%;
+    }
+
+    .Birth18 {
+        bottom: -40px;
+    }
+
+    .Birth18 p {
+        white-space: nowrap;
+        margin-left: 10%;
+    }
+
+    .Address {
+        margin: 10px 0;
+    }
+}

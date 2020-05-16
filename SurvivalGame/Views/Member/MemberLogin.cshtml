@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "MemberLogin";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 LoginArea">
+            <div class="Title">
+                <h3>會員登入</h3>
+            </div>
+            <div class="content  rounded-lg">
+                <div class="Id">
+                    <label for="" class="col-3">帳號 :</label><input type="text" class="col-9" placeholder="">
+                </div>
+                <div class="PassWord">
+                    <label for="" class="col-3">密碼 :</label><input type="text" class="col-9" placeholder="">
+                </div>
+                <div class="Btn">
+                    <button type="submit" class="btn btn-outline-info">登入</button>
+                </div>
+            </div>
+            <div class="Update">
+                <div class="Forget">
+                    <button class="btn btn-outline-danger" data-toggle="modal" data-target="#Forget">忘記密碼</button>
+                </div>
+                <div class="Create">
+                    <button class="btn btn-outline-success">註冊</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="Forget" tabindex="-1" role="dialog" aria-labelledby="ForgetTitle"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="ForgetLongTitle">忘記密碼</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #fff;>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row ForgetArea">
+
+                                <div class="ForgetContent">
+                                    <strong class="">
+                                        請輸入信箱
+                                    </strong>
+                                    <input type="email" name="" id="" class="">
+                                </div>
+                                <div class="Btn">
+                                    <button type="submit" class="btn btn-secondary">送出</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section topCss{
+    <link href="~/Assets/css/MemberLogin/MemberLogin.css" rel="stylesheet" />
+}
