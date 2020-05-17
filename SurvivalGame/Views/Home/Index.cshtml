@@ -92,7 +92,7 @@
 
 <!-- productsItem -->
 <div class="mt-5">
-    <h2 class="d-flex justify-content-center" style="font-size: 80px">Products</h2>
+    <h2 class="d-flex justify-content-center" style="font-size: 80px ; color:white;">Products</h2>
     <div class="container my-3" style="max-width: 1500px;">
         <div class="row">
             <div class="Products d-flex flex-wrap">
@@ -195,6 +195,20 @@
 
         .HotNewSale a {
             text-decoration: none;
+        }
+        .HotNewSale{
+            overflow:hidden;
+            margin: auto;
+        }
+ 
+        .HotNewSale img{
+            max-width: 100%;
+            height:  auto;
+            transform:scale(1,1);
+            transition: all 1s ease-out;
+            }
+        .HotNewSale img:hover{
+            transform:scale(1.1,1.1);
         }
     </style>
 }
