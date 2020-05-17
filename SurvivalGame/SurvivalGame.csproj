@@ -299,6 +299,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Assets\imgs\" />
     <Folder Include="Models\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

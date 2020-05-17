@@ -1,17 +1,82 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    @RenderSection("topCss" ,required:false);
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
+    @RenderSection("topCss" ,required: false)
+    <style>
+        *{
+            font-family: 'Long Cang', cursive;
+        }
+
+        .Navbar {
+            font-family: 'Long Cang', cursive;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+
 </head>
-<body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
+<body class="pt-0">
+    <div class="container-fluid Navbar" style="position: sticky; top: 0; z-index: 100;">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="#" style="font-size:38px;"><img src="img/BuildSchool.png" alt="" style="width: 45px; margin-right: 10px;">Build School武器空間</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav" style="font-size: 20px; margin: auto;">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">關於我們<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">槍枝</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">服裝</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">配件</a>
+                            </li>
+                        </ul>
+                        <div class="dropdown mr-3">
+                            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#" style="font-size: 20px;">會員資訊</a>
+                                <a class="dropdown-item" href="#" style="font-size: 20px;">購物車</a>
+                                <a class="dropdown-item" href="#" style="font-size: 20px;">登出</a>
+                            </div>
+                        </div>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="font-size: 20px; width: 150px;">
+                            <button class="btn" type="submit"><a href="#"><i class="fa fa-search text-light"></i></a></button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts" ,required: false)
+
+    @RenderSection("bottomJs" ,required: false)
+</body>
+</html>
+@*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -37,12 +102,3 @@
             <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
         </footer>
     </div>*@
-    @RenderBody()
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts" ,required: false)
-
-    @RenderSection("bottomJs" ,required: false)
-</body>
-</html>
