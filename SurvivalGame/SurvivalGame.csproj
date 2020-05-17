@@ -142,6 +142,8 @@
     <Content Include="Assets\images\5.jpg" />
     <Content Include="Assets\images\6.jpg" />
     <Content Include="Assets\images\7.jpg" />
+    <Content Include="Assets\images\background.jpg" />
+    <Content Include="Assets\images\BuildSchool.png" />
     <Content Include="Assets\images\Product1.png" />
     <Content Include="Assets\images\Product2.png" />
     <Content Include="Assets\images\Product3.png" />
@@ -280,7 +282,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />
@@ -294,6 +295,7 @@
     <Content Include="Views\Product\ProductMenu.cshtml" />
     <Content Include="Views\Member\MemberRegistered.cshtml" />
     <Content Include="Views\Member\MemberLogin.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
