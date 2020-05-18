@@ -1,3 +1,7 @@
+* {
+  color: #fff;
+}
+
 img {
   width: 100%;
 }
@@ -11,7 +15,12 @@ img {
 
 .ControlPanel select.ClassSelector {
   background-color: transparent;
+  color: #fff;
   margin-bottom: 30px;
+}
+
+.ControlPanel select.ClassSelector option {
+  color: #000;
 }
 
 .ControlPanel #Classification {
@@ -59,12 +68,17 @@ img {
   margin: 0;
 }
 
+.ControlPanel #Classification .Condition span {
+  color: #000;
+}
+
 .ControlPanel #Classification input:checked ~ .Condition {
   background-color: #555;
   color: #fff;
 }
 
 .ControlPanel #Classification .card {
+  background-color: transparent;
   border-radius: none;
   border: none;
 }
@@ -106,11 +120,12 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid black;
+  border: 1px solid #eee;
   display: flex;
 }
 
 .DisplayPanel .OrderTypeGroup .OrderType {
+  color: #fff;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -123,12 +138,16 @@ img {
   cursor: pointer;
 }
 
+.DisplayPanel .OrderTypeGroup .OrderType span {
+  color: #fff;
+}
+
 .DisplayPanel .OrderTypeGroup .OrderType + .OrderType {
-  border-left: 1px solid black;
+  border-left: 1px solid #eee;
 }
 
 .DisplayPanel .OrderTypeGroup .OrderType:last-child {
-  border-right: 1px solid black;
+  border-right: 1px solid #eee;
 }
 
 .DisplayPanel .ProductGroup {
