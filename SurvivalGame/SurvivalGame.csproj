@@ -133,6 +133,7 @@
   <ItemGroup>
     <Content Include="Assets\css\MemberLogin\MemberLogin.css" />
     <Content Include="Assets\css\MemberRegistered\MemberRegistered.css" />
+    <Content Include="Assets\css\ProductDetails\ProductDetails.css" />
     <Content Include="Assets\css\productMenu\productMenu.css" />
     <Content Include="Assets\css\productMenu\reset.css" />
     <Content Include="Assets\css\ShoppingCart\ShoppingCart.css" />
@@ -300,6 +301,7 @@
     <Content Include="Views\Member\MemberLogin.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Product\ShoppingCart.cshtml" />
+    <Content Include="Views\Product\ProductDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
