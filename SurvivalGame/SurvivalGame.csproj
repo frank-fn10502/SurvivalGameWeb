@@ -133,8 +133,10 @@
   <ItemGroup>
     <Content Include="Assets\css\MemberLogin\MemberLogin.css" />
     <Content Include="Assets\css\MemberRegistered\MemberRegistered.css" />
+    <Content Include="Assets\css\ProductDetails\ProductDetails.css" />
     <Content Include="Assets\css\productMenu\productMenu.css" />
     <Content Include="Assets\css\productMenu\reset.css" />
+    <Content Include="Assets\css\ShoppingCart\ShoppingCart.css" />
     <Content Include="Assets\images\1.jpg" />
     <Content Include="Assets\images\2.jpg" />
     <Content Include="Assets\images\3.jpg" />
@@ -151,6 +153,8 @@
     <Content Include="Assets\images\Product5.png" />
     <Content Include="Assets\javaScript\productMenu\ExteriorHelper.js" />
     <Content Include="Assets\javaScript\productMenu\productMenu.js" />
+    <Content Include="Assets\javaScript\ShoppingCarts\ShoppingCart.js" />
+    <Content Include="Assets\javaScript\ShoppingCarts\smtp.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -296,6 +300,8 @@
     <Content Include="Views\Member\MemberRegistered.cshtml" />
     <Content Include="Views\Member\MemberLogin.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\ShoppingCart.cshtml" />
+    <Content Include="Views\Product\ProductDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

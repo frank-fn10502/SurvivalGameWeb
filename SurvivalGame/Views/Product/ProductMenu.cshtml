@@ -208,7 +208,7 @@
             let productPanel = document.querySelectorAll('.ProductGroup .card');
             productPanel.forEach(x => {
                 x.addEventListener('click', (e) => {
-                    window.location.href = '@Url.Action("About","Home")';
+                    window.location.href = '@Url.Action("ProductDetails","Product")';
                 });
             });
         }
