@@ -51,3 +51,13 @@ label {
 strong{
     margin: 0 7px 0 -20px;
 }
+
+@media screen and (max-width: 767px) {
+    input {
+        text-align: center;
+    }
+
+    .col-2 {
+        max-width: 100%;
+    }
+}
