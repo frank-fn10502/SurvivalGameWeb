@@ -3,214 +3,317 @@
     ViewBag.Title = "商品清單";
 }
 
-<div class="container-xl mt-3">
-    <div class="row">
-        <div class="col-3">
-            <div class="ControlPanel">
-                <select class="form-control ClassSelector" id="ClassSelector" readonly>
-                    <option>服裝</option>
-                    <option>槍枝</option>
-                    <option>配件</option>
-                </select>
-                <div class="accordion" id="Classification">
-                    <div class="card">
-                        <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false">
-                            廠牌
+<!-- ##### Shop Grid Area Start ##### -->
+<section class="shop_grid_area section-padding-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-3">
+                <div class="shop_sidebar_area">
+
+                    <!-- Widget Title -->
+                    <h6 class="widget-title mb-30">類別</h6>
+                    <!-- ##### Single Widget ##### -->
+                    <div class="widget catagory mb-50">
+                        <!--  Catagories  -->
+                        <div class="catagories-menu">
+                            <ul id="menu-content2" class="menu-content collapse show">
+                                <!-- Single Item -->
+                                <li>
+                                    <!-- data-toggle="collapse" data-target="#clothing" -->
+                                    <a href="#clothing" data-toggle="collapse">服飾</a>
+                                    <ul class="sub-menu collapse show" id="clothing">
+                                        <li><a href="#">All</a></li>
+                                        <li><a href="#">Bodysuits</a></li>
+                                        <li><a href="#">Dresses</a></li>
+                                        <li><a href="#">Hoodies &amp; Sweats</a></li>
+                                        <li><a href="#">Jackets &amp; Coats</a></li>
+                                        <li><a href="#">Jeans</a></li>
+                                        <li><a href="#">Pants &amp; Leggings</a></li>
+                                        <li><a href="#">Rompers &amp; Jumpsuits</a></li>
+                                        <li><a href="#">Shirts &amp; Blouses</a></li>
+                                        <li><a href="#">Shirts</a></li>
+                                        <li><a href="#">Sweaters &amp; Knits</a></li>
+                                    </ul>
+                                </li>
+                                <!-- Single Item -->
+                                <li data-toggle="collapse" data-target="#shoes" class="collapsed">
+                                    <a href="#">槍枝</a>
+                                    <ul class="sub-menu collapse" id="shoes">
+                                        <li><a href="#">All</a></li>
+                                        <li><a href="#">Bodysuits</a></li>
+                                        <li><a href="#">Dresses</a></li>
+                                        <li><a href="#">Hoodies &amp; Sweats</a></li>
+                                        <li><a href="#">Jackets &amp; Coats</a></li>
+                                        <li><a href="#">Jeans</a></li>
+                                        <li><a href="#">Pants &amp; Leggings</a></li>
+                                        <li><a href="#">Rompers &amp; Jumpsuits</a></li>
+                                        <li><a href="#">Shirts &amp; Blouses</a></li>
+                                        <li><a href="#">Shirts</a></li>
+                                        <li><a href="#">Sweaters &amp; Knits</a></li>
+                                    </ul>
+                                </li>
+                                <!-- Single Item -->
+                                <li data-toggle="collapse" data-target="#accessories" class="collapsed">
+                                    <a href="#">配件</a>
+                                    <ul class="sub-menu collapse" id="accessories">
+                                        <li><a href="#">All</a></li>
+                                        <li><a href="#">Bodysuits</a></li>
+                                        <li><a href="#">Dresses</a></li>
+                                        <li><a href="#">Hoodies &amp; Sweats</a></li>
+                                        <li><a href="#">Jackets &amp; Coats</a></li>
+                                        <li><a href="#">Jeans</a></li>
+                                        <li><a href="#">Pants &amp; Leggings</a></li>
+                                        <li><a href="#">Rompers &amp; Jumpsuits</a></li>
+                                        <li><a href="#">Shirts &amp; Blouses</a></li>
+                                        <li><a href="#">Shirts</a></li>
+                                        <li><a href="#">Sweaters &amp; Knits</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-                        <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#Classification">
-                            <div class="card-body">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1">
-                                <div class="btn btn-light Condition">
-                                    <label for="inlineCheckbox1"></label>
-                                    <span>
-                                        Asus
-                                    </span>
+                    </div>
+
+                    <!-- Widget Title -->
+                    <h6 class="widget-title mb-30">篩選條件</h6>
+                    <div class="filterArea">
+                        <div class="widget price mb-50">
+
+                            <!-- Widget Title 2 -->
+                            <p class="widget-title2 mb-30">Price</p>
+
+                            <div class="widget-desc">
+                                <div class="slider-range">
+                                    <div data-min="49" data-max="1000" data-unit="$"
+                                         class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                                         data-value-min="49" data-value-max="1000" data-label-result="Range:">
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
+                                        <span class="ui-slider-handle ui-state-default ui-corner-all"
+                                              tabindex="0"></span>
+                                        <span class="ui-slider-handle ui-state-default ui-corner-all"
+                                              tabindex="0"></span>
+                                    </div>
+                                    <div class="range-price">Range: $49.00 - $360.00</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false">
-                            價錢
+
+                        <!-- ##### Single Widget ##### -->
+                        <div class="widget color mb-50">
+                            <!-- Widget Title 2 -->
+                            <p class="widget-title2 mb-30">Color</p>
+                            <div class="widget-desc">
+                                <ul class="d-flex">
+                                    <li><a href="#" class="color1"></a></li>
+                                    <li><a href="#" class="color2"></a></li>
+                                    <li><a href="#" class="color3"></a></li>
+                                    <li><a href="#" class="color4"></a></li>
+                                    <li><a href="#" class="color5"></a></li>
+                                    <li><a href="#" class="color6"></a></li>
+                                    <li><a href="#" class="color7"></a></li>
+                                    <li><a href="#" class="color8"></a></li>
+                                    <li><a href="#" class="color9"></a></li>
+                                    <li><a href="#" class="color10"></a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#Classification">
-                            <div class="card-body">
-                                t2
+
+                        <!-- ##### Single Widget ##### -->
+                        <div class="widget brands mb-50">
+                            <!-- Widget Title 2 -->
+                            <p class="widget-title2 mb-30">Brands</p>
+                            <div class="widget-desc">
+                                <ul>
+                                    <li><a href="#">Asos</a></li>
+                                    <li><a href="#">Mango</a></li>
+                                    <li><a href="#">River Island</a></li>
+                                    <li><a href="#">Topshop</a></li>
+                                    <li><a href="#">Zara</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false">
-                            重量
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#Classification">
-                            <div class="card-body">
-                                t3
-                            </div>
-                        </div>
-                    </div>
+                    <!-- ##### Single Widget ##### -->
+
                 </div>
             </div>
-        </div>
-        <div class="col-9">
-            <div class="DisplayPanel">
-                <div class="SearchCount">
-                    <span class="Total">
-                        相關商品:
-                        <span>197</span>
-                        項
-                    </span>
-                    <span class="PageInfo">
-                        顯示<span> 1 - 20 </span>項
-                        (共計<span> 8 </span>頁)
-                    </span>
-                </div>
-                <div class="OrderTypeGroup">
-                    <div class="OrderType">
-                        <span class="title">預設</span>
-                        <span class="icon"></span>
-                    </div>
-                    <div class="OrderType">
-                        <span class="title">人氣</span>
-                        <span class="icon"></span>
-                    </div>
-                    <div class="OrderType">
-                        <span class="title">價格</span>
-                        <span class="icon"></span>
-                    </div>
-                    <div class="OrderType">
-                        <span class="title">新品</span>
-                        <span class="icon"></span>
-                    </div>
-                </div>
-                <div class="ProductGroup">
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="card">
-                            <div class="pic">
-                                <div class="Frame">
-                                    <div class="Item">
-                                        <img src="https://picsum.photos/400/300/?random=10">
-                                    </div>
+
+            <div class="col-12 col-md-8 col-lg-9">
+                <div class="shop_grid_product_area">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="product-topbar d-flex align-items-center justify-content-between">
+                                <!-- Total Products -->
+                                <div class="total-products">
+                                    <p><span id="productCount">186</span> products found</p>
                                 </div>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="ProductTitle">這是一個東西的名稱</h3>
-                                <p class="Price">
-                                    <span class="CurrentPrice">$34,900</span>
-                                    <span class="OriginPrice">$59,999</span>
-                                </p>
-                                <div class="ButtonGroup">
-                                    <button class="btn like">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                    <button class="btn cart">
-                                        <i class="fas fa-shopping-cart"></i>
-                                    </button>
+                                <!-- Sorting -->
+                                <div class="product-sorting d-flex">
+                                    <p>Sort by:</p>
+                                    <select name="select" id="sortByselect">
+                                        <option value="value">預設</option>
+                                        <option value="value">人氣</option>
+                                        <option value="value">價格</option>
+                                        <option value="value">新品</option>
+                                    </select>
+                                    <select id="orderDir">
+                                        <option value="value">小到大</option>
+                                        <option value="value">大到小</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                    </div>
                 </div>
-                <nav aria-label="product page" class="page">
-                    <ul class="pagination">
+                <!-- Pagination -->
+                <nav aria-label="navigation">
+                    <ul class="pagination mt-50 mb-70">
                         <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
+                            <a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
                         </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">21</a></li>
                         <li class="page-item">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
+                            <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
     </div>
-</div>
-
-<template id="CategoryPattern">
-    <div class="card">
-        <div class="card-header" id="heading{{index}}" data-toggle="collapse" data-target="#collapse{{index}}" aria-expanded="false">
-            {{categoryTitle}}
-        </div>
-        <div id="collapse{{index}}" class="collapse " aria-labelledby="heading{{index}}" data-parent="#Classification">
-            <div class="card-body">
-                {{categoryItemList}}
+</section>
+<!-- ##### Shop Grid Area End ##### -->
+<template id="singleProductTemplate">
+    <!-- 模板  -->
+    <!-- Single Product -->
+    <div class="col-12 col-sm-6 col-lg-4">
+        <div class="single-product-wrapper">
+            <!-- Product Image -->
+            <div class="product-img">
+                <div class="pic">
+                    <div class="Frame">
+                        <div class="Item">
+                            {{img}}
+                            <!--可能會改成多張圖-->
+                        </div>
+                    </div>
+                </div>
+                <!-- <img src="img/product-img/product-1.jpg" alt=""> -->
+                <!-- Hover Thumb -->
+                <!-- Product Badge -->
+                <div class="product-badge offer-badge">
+                    <!-- new-badge -->
+                    <span>-30%</span>
+                </div>
+                <!-- Favourite -->
+                <div class="product-favourite">
+                    <a href="#" class="favme fa fa-heart"></a>
+                </div>
             </div>
-        </div>
-    </div>
-</template>
-<template id="CategoryItem">
-    <div class="Item">
-        <input type="checkbox" id="{{index}}checkbox" value="option1">
-        <div class="btn btn-light Condition">
-            <label for="{{index}}checkbox"></label>
-            <span>
-                {{Name}}
-            </span>
-        </div>
-    </div>
-</template>
-<template id="ProductCardPattern">
-    <div class="col-6 col-md-4 col-lg-3">
-        <div class="card">
-            <div class="pic">
-                <div class="Frame">
-                    <div class="Item">
-                        {{img}}<!--可能會改成多張圖-->
+
+            <!-- Product Description -->
+            <div class="product-description">
+                <!-- <span>topshop</span> -->
+                <a href="single-product-details.html">
+                    <h6>{{name}}</h6>
+                </a>
+                <p class="product-price">
+                    <span class="current-price">${{onsalePrice}}</span>
+                    <span class="old-price">${{price}}</span>
+                </p>
+
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <!-- Add to Cart -->
+                    <div class="add-to-cart-btn">
+                        <a href="#" class="btn essence-btn">Add to Cart</a>
                     </div>
                 </div>
             </div>
-            <div class="card-body">
-                <h3 class="ProductTitle">{{name}}</h3>
-                <p class="Price">
-                    <span class="CurrentPrice">${{price}}</span>
-                    <span class="OriginPrice">${{onsalePrice}}</span>
-                </p>
-                <div class="ButtonGroup">
-                    <button class="btn like">
-                        <i class="fas fa-heart"></i>
-                    </button>
-                    <button class="btn cart">
-                        <i class="fas fa-shopping-cart"></i>
-                    </button>
+        </div>
+    </div>
+</template>
+
+<template id="catagoryTemplate">
+    <li>
+        <a href="#collapse{{index}}" data-toggle="collapse" aria-expanded="false">{{categoryTitle}}</a>
+        <ul class="sub-menu collapse" id="collapse{{index}}">
+            {{categoryItemList}}
+        </ul>
+    </li>
+</template>
+<template id="categoryItemList">
+    <li><a href="#">{{Name}}</a></li>
+</template>
+
+<!--
+         -->
+<template id="filterTemplate">
+    <div class="filterAreaDisplay">
+        {{rangeList:pricePaternTemplate}}
+        {{colorList:colorPaternTemplate}}
+        {{otherList:normalAttrTemplate}}
+    </div>
+</template>
+
+<template id="pricePaternTemplate">
+    <div class="widget price mb-50">
+        <p class="widget-title2 mb-30">{{Title}}</p>
+        <div class="widget-desc">
+            <div class="slider-range">
+                <div data-min="{{Min}}" data-max="{{Max}}" data-unit="$"
+                     class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                     data-value-min="{{Min}}" data-value-max="{{Max}}" data-label-result="Range:">
+                    <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
+                    <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+                    <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
                 </div>
+                <div class="range-price">Range: ${{Min}} - ${{Max}}</div>
             </div>
         </div>
     </div>
+</template>
+
+<template id="colorPaternTemplate">
+    <div class="widget color mb-50 colorAttr">
+        <!-- Widget Title 2 -->
+        <p class="widget-title2 mb-30">{{Title}}</p>
+        <div class="widget-desc">
+            <ul class="d-flex">
+                {{colorItemList:colorItemList}}
+            </ul>
+        </div>
+    </div>
+</template>
+<template id="colorItemList">
+    <li><a href="#" style="background-color: {{colorCode}};" data-color="{{Name}}"></a></li>
+</template>
+
+<template id="normalAttrTemplate">
+    <div class="widget brands mb-50 nomalAttr">
+        <p class="widget-title2 mb-30">{{Title}}</p>
+        <div class="widget-desc">
+            <ul>
+                {{normalAttrItemList:normalAttrItemList}}
+            </ul>
+        </div>
+    </div>
+</template>
+<template id="normalAttrItemList">
+    <li><a href="#">{{Name}}</a></li>
 </template>
 
 @section topCss
 {
-    <link href="~/Assets/css/productMenu/reset.css" rel="stylesheet" />
-    <link href="~/Assets/css/productMenu/productMenu.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/95fe5e2d81.js" crossorigin="anonymous"></script>
+    <link href="~/Assets/css/productMenu/shop.css" rel="stylesheet" />
 }
 @section bottomJs
 {
     <script src="~/Assets/javaScript/productMenu/ExteriorHelper.js"></script>
-    <script src="~/Assets/javaScript/productMenu/productMenu.js"></script>
-    <script>
-        @*@Url.Action(action,controller) @Url.Action("Index","Home")*@
-        window.onload = () => {
-            initPage();
-            let productPanel = document.querySelectorAll('.ProductGroup .card');
-            productPanel.forEach(x => {
-                x.addEventListener('click', (e) => {
-                    window.location.href = '@Url.Action("About","Home")';
-                });
-            });
-        }
-    </script>
+    <script src="~/Assets/javaScript/productMenu/shop.js"></script>
 }

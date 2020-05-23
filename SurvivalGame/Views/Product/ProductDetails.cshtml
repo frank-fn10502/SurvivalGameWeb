@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "商品明細";
+}
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-4 col-md-3">
+        </div>
+        <div class="col-8 col-md-9">
+            <div>
+                <div class="d-flex">
+                    <figure class="figure">
+                        <img src="https://sf-shop.tw/wp-content/uploads/WE-G19V-RMR%E7%89%88-%E7%93%A6%E6%96%AF%E6%89%8B%E6%A7%8D-2900.jpg"
+                             class="figure-img img-fluid rounded" alt="...">
+                        <figcaption class="figure-caption ProductNumber">編號:A01</figcaption>
+                    </figure>
+                    <div class="col-6">
+                        <div class="ProductName pt-3">
+                            <h3>G19V Glock19V 瓦斯手槍</h3>
+                        </div>
+                        <div class="ProductPrice pt-3">
+                            <p>價格:13,000</p>
+                        </div>
+
+                        <div class="ProductSpecification pt-3">
+                            <label for="SelSpecify">規格</label>
+                            <select class="custom-select" id="SelSpecify" required>
+                                <option selected disabled value="">規格</option>
+                                <option value="1">手槍</option>
+                                <option value="2">步槍</option>
+                                <option value="3">配備</option>
+                            </select>
+                            <div></div>
+                        </div>
+
+                        <div class="ProductQuality pt-3">
+                            <label for=" Qty">數量</label>
+                            <input type="number" id="Qty" class="input-text qty text" step="1" min="1" max=""
+                                   value="1" title="數量" inputmode="numeric">
+                            <div></div>
+                        </div>
+
+                        <div class="ProductAddCart pt-3">
+                            <button type="button" class="btn btn-secondary btn-sm">加入購物車</button>
+                        </div>
+                        @*<div class="ProductPayer pt-3">
+                        <p>付款方式:貨到付款</p>
+                    </div>
+                    <div class="ProductAddress pt-3">
+                        <p>運送地址:新竹市香山區五福路二段</p>
+                    </div>*@
+                    </div>
+                </div>
+            </div>
+            <div style="border-bottom: 1px solid #ddd9d9;"></div>
+            <div class="row justify-content-center align-items-center ProductDescribe">
+                <h3>額外資訊</h3>
+                <img src="https://sf-shop.tw/wp-content/uploads/WE-G19V-RMR%E7%89%88-%E7%93%A6%E6%96%AF%E6%89%8B%E6%A7%8D-%E9%BB%91%E8%89%B2-2900-10.jpg"
+                     alt="圖片說明" class="rounded w-100 d-block">
+                <div class="col-12">
+                    <strong>產品規格:</strong>
+                    <p>➤材質 : 金屬/塑膠</p>
+                    <p>➤動力 : 瓦斯</p>
+                    <p>➤彈容量 : 20發</p>
+                    <p>➤初速 : 約90 m/s(0.2g BB彈)</p>
+                    <p>➤長度 : 174 mm</p>
+                    <p>➤重量 : 690 g</p>
+                    <p>➤射擊模式 : 單發/保險</p>
+                    <p>➤滑套可動，無彈後定</p>
+                    <p>➤原廠槍均為一槍一彈匣</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section topCss{
+    <link href="~/Assets/css/ProductDetails/ProductDetails.css" rel="stylesheet" />
+}
+

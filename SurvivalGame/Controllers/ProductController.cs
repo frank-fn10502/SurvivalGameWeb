@@ -13,5 +13,15 @@ namespace SurvivalGame.Controllers
         {
             return View();
         }
+
+        public ActionResult ShoppingCart()
+        {
+            return View();
+        }
+
+        public ActionResult ProductDetails()
+        {
+            return View();
+        }
     }
 }
