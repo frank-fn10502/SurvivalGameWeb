@@ -152,6 +152,7 @@
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\SGRepository.cs" />
+    <Compile Include="ViewModels\Index\ProductsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\animate.css" />
@@ -411,7 +412,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Services\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
