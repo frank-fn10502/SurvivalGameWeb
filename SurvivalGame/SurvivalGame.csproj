@@ -136,9 +136,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Catagory.cs" />
     <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\Imgs.cs" />
     <Compile Include="Models\Manufacturers.cs" />
     <Compile Include="Models\Members.cs" />
     <Compile Include="Models\Orders.cs" />
@@ -152,6 +152,15 @@
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\SGRepository.cs" />
+    <Compile Include="ViewModels\ProductMenu\AttributesViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\CatagoryViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\ColorItemViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\ColorViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\NormalViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\ProductViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\RangeViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\ProductMenuViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\SubClassViewMode.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\animate.css" />
@@ -411,7 +420,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Services\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
