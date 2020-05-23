@@ -273,8 +273,6 @@
     <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="Assets\css\productMenu\productMenu.css.map" />
     <Content Include="Assets\css\productMenu\productMenu.scss" />
-    <Content Include="Assets\xlsxData\Gun.xlsx" />
-    <Content Include="Assets\xlsxData\彈匣.xlsx" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
@@ -289,6 +287,7 @@
     <Content Include="Assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Assets\fonts\FontAwesome.otf" />
+    <Content Include="Assets\xlsxData\產品資料.xlsx" />
     <None Include="Properties\PublishProfiles\bs2020survivalGame - Web Deploy.pubxml" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
