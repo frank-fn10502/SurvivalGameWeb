@@ -152,7 +152,6 @@
     <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\SGRepository.cs" />
-<<<<<<< HEAD
     <Compile Include="ViewModels\ProductMenu\AttributesViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\CatagoryViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\ColorItemViewModel.cs" />
@@ -162,9 +161,7 @@
     <Compile Include="ViewModels\ProductMenu\RangeViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\ProductMenuViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\SubClassViewMode.cs" />
-=======
     <Compile Include="ViewModels\Index\ProductsViewModel.cs" />
->>>>>>> 9e57b03e451788d74f8df9a8a8844ea9addb2b2b
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\animate.css" />
