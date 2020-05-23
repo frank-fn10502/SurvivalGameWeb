@@ -5,12 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+
+    @*@Scripts.Render("~/bundles/modernizr")*@
     @*<script src="https://kit.fontawesome.com/437be08d6c.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">*@
 
     <link rel="icon" href="img/core-img/favicon.ico">
+    @Styles.Render("~/Content/css")
     @* 套版的css *@
     <link href="~/Assets/css/animate.css" rel="stylesheet" />
     <link href="~/Assets/css/classy-nav.min.css" rel="stylesheet" />
@@ -314,8 +315,8 @@
         </div>
     </footer>
     <!-- ##### Footer Area End ##### -->
-
     @Scripts.Render("~/bundles/jquery")
+    @*<script src="~/Assets/javaScript/jquery-2.2.4.min.js"></script>*@
     @* 套版的JS *@
     <script src="~/Assets/javaScript/popper.min.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
