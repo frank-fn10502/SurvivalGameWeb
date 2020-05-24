@@ -153,6 +153,7 @@
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\SGRepository.cs" />
     <Compile Include="Services\ProductMenuService.cs" />
+    <Compile Include="ViewModels\Index\ProductsViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\AttributesViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\CatagoryViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\ColorItemViewModel.cs" />
@@ -163,6 +164,10 @@
     <Compile Include="ViewModels\ProductMenu\ProductMenuViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\SubClassViewMode.cs" />
     <Compile Include="ViewModels\Index\ProductsViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\ProductMenuViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\ProductViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\RangeViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\SubClassViewMode.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\animate.css" />
@@ -525,6 +530,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="tempModels\" />
+    <Folder Include="Assets\javaScript\MemberLogin\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
