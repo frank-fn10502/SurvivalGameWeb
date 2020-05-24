@@ -8,7 +8,6 @@ namespace SurvivalGame.ViewModels.ProductMenu
     public class ColorViewModel
     {
         public string Title { get; set; }
-        public int max { get; set; }
-        public int min { get; set; }
+        public List<ColorItemViewModel> ColorItemList { get; set; }
     }
 }

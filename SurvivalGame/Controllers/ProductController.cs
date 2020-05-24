@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SurvivalGame.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +23,13 @@ namespace SurvivalGame.Controllers
         public ActionResult ProductDetails()
         {
             return View();
+        }
+
+        public ActionResult GetCatagoryItems()
+        {
+            ProductMenuService pService = new ProductMenuService();
+            var t = pService.GetViewData("CG001");
+            return Json( t,JsonRequestBehavior.AllowGet);
         }
     }
 }

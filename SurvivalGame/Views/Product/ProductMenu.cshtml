@@ -1,5 +1,5 @@
 ﻿
-@{
+@{ 
     ViewBag.Title = "商品清單";
 }
 
@@ -16,6 +16,7 @@
     </div>
 </div>
 <!-- ##### Breadcumb Area End ##### -->
+
 <!-- ##### Shop Grid Area Start ##### -->
 <section class="shop_grid_area section-padding-80">
     <div class="container">
@@ -201,6 +202,7 @@
     </div>
 </section>
 <!-- ##### Shop Grid Area End ##### -->
+
 <template id="singleProductTemplate">
     <!-- 模板  -->
     <!-- Single Product -->
@@ -211,7 +213,8 @@
                 <div class="pic">
                     <div class="Frame">
                         <div class="Item">
-                            {{img}}
+                            @*{{img}}*@
+                            {{ImgPath}}
                             <!--可能會改成多張圖-->
                         </div>
                     </div>
@@ -254,7 +257,7 @@
 
 <template id="catagoryTemplate">
     <li>
-        <a href="#collapse{{index}}" data-toggle="collapse" aria-expanded="false">{{categoryTitle}}</a>
+        <a href="#collapse{{index}}" data-toggle="collapse" aria-expanded="false">{{categoryTitle}} </a>
         <ul class="sub-menu collapse" id="collapse{{index}}">
             {{categoryItemList}}
         </ul>
@@ -312,7 +315,7 @@
         <p class="widget-title2 mb-30">{{Title}}</p>
         <div class="widget-desc">
             <ul>
-                {{normalAttrItemList:normalAttrItemList}}
+                {{Attributes:normalAttrItemList}}
             </ul>
         </div>
     </div>
