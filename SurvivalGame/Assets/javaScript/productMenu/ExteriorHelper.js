@@ -38,7 +38,7 @@ function createEntity(objData, templateList, title = '', numberNo = -99) {
             else if (typeof data != 'object') {
                 let imgReg = /(https:\/\/|.+)(\/.+)*(.jpg|.png|.+random)/ //
                 if (data.toString().match(imgReg)) {
-                    return `<img src="${data}" alt="imgGenByFunc">`;
+                    return `<img src="../../${data}" alt="imgGenByFunc">`;
                 }
                 else {
                     return data;

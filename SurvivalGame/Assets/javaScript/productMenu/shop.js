@@ -73,7 +73,7 @@ let fakeSubClassData = [
         otherList: [
             {
                 Title: "廠商",
-                normalAttrItemList: [
+                Attributes: [
                     { Name: "Asus" },
                     { Name: "Acer" },
                     { Name: "Msi" },
@@ -85,27 +85,9 @@ let fakeSubClassData = [
 ]
 
 
-let catagoryA = null;
+let catagoryA = null, subCatagory = null;
 
 
-function readomProduct() {
-
-    for (let i = 0; i < 20; i++) {
-        let end = Math.random() * Math.floor(fakeTitlelistRandom.length);
-        end = (end <= 40 ? 40 : end);
-        let start = end - parseInt(Math.random() * Math.floor(30) + 10 + 1);
-        let data =
-        {
-            name: fakeTitlelistRandom.substring(start, end),
-            price: parseInt(Math.random() * Math.floor(100000) + 1),
-            onsalePrice: '',
-            img: `https://picsum.photos/400/300/?random=${parseInt(Math.random() * Math.floor(15) + 5 + 1)}`
-        }
-        data.onsalePrice = parseInt(data.price * 0.8);
-        fakeProductData.push(data);
-    }
-
-}
 function initActivate() {
     var favme = $(".favme");
 
@@ -155,16 +137,62 @@ function initActivate() {
         });
     });
 }
-window.onload = function () {
-    let test = this.document.querySelectorAll(".nice-select li");
-    test.forEach(x => {
-        x.addEventListener('click', (x) => {
-            console.log(x.currentTarget.innerHTML);
+
+function setEvent()
+{
+    catagoryA = this.document.querySelectorAll('#menu-content2 > li > a');
+    catagoryA.forEach(x => {
+        x.addEventListener('click', (e) => {
+            console.log("catagory top test");
+            catagoryA.forEach(x => {
+                if (x != e.currentTarget)
+                {
+                    console.log(x, x.parentElement.querySelector('ul'));
+                    
+                    $(`#${x.parentElement.querySelector('ul').id}`).collapse('hide');
+                    //x.classList.remove('activateA');
+                }
+            });
+            e.currentTarget.classList.add('activateA');
         });
     });
-    console.log(test);
 
-    readomProduct();
+    subCatagory = this.document.querySelectorAll('#menu-content2 ul a');
+    subCatagory.forEach(x => {
+        x.addEventListener('click', (e) => {
+            console.log("catagory test");
+            subCatagory.forEach(x => {
+                x.classList.remove('activateA');
+            });
+            e.currentTarget.classList.add('activateA');
+        });
+    });
+
+    let filter = this.document.querySelectorAll('.filterArea .nomalAttr ul a');
+    filter.forEach(x => {
+        x.addEventListener('click', (e) => {
+            console.log("filter test");
+            if (e.currentTarget.className.includes('activateA'))
+                e.currentTarget.classList.remove('activateA');
+            else
+                e.currentTarget.classList.add('activateA');
+
+        });
+    });
+    let filterColor = this.document.querySelectorAll('.filterArea .widget.color.colorAttr li > a');
+    filterColor.forEach(x => {
+        x.addEventListener('click', (e) => {
+            console.log("filter color test");
+            if (e.currentTarget.className.includes('boxSelected'))
+                e.currentTarget.classList.remove('boxSelected');
+            else
+                e.currentTarget.classList.add('boxSelected');
+
+        });
+    });
+}
+function getRealData()
+{
     let productMenu = this.document.querySelector(".shop_grid_product_area .row:last-child");
     productMenu.innerHTML = '';
     productMenu.innerHTML = createEntity(fakeProductData, ['#singleProductTemplate']).innerHTML;
@@ -187,37 +215,38 @@ window.onload = function () {
         ['#normalAttrTemplate', '#normalAttrItemList']]).innerHTML;
 
 
-    initActivate();
-    catagoryA = this.document.querySelectorAll('#menu-content2 ul a');
-    catagoryA.forEach(x => {
-        x.addEventListener('click', (e) => {
-            console.log("catagory test");
-            catagoryA.forEach(x => {
-                x.classList.remove('activateA');
-            });
-            e.currentTarget.classList.add('activateA');
-        });
-    });
-    let filter = this.document.querySelectorAll('.filterArea .nomalAttr ul a');
-    filter.forEach(x => {
-        x.addEventListener('click', (e) => {
-            console.log("filter test");
-            if (e.currentTarget.className.includes('activateA'))
-                e.currentTarget.classList.remove('activateA');
-            else
-                e.currentTarget.classList.add('activateA');
+    setEvent();
+}
 
+window.onload = function () {
+    let test = this.document.querySelectorAll(".nice-select li");
+    test.forEach(x => {
+        x.addEventListener('click', (x) => {
+            console.log(x.currentTarget.innerHTML);
         });
     });
-    filterColor = this.document.querySelectorAll('.filterArea .widget.color.colorAttr li > a');
-    filterColor.forEach(x => {
-        x.addEventListener('click', (e) => {
-            console.log("filter color test");
-            if (e.currentTarget.className.includes('boxSelected'))
-                e.currentTarget.classList.remove('boxSelected');
-            else
-                e.currentTarget.classList.add('boxSelected');
+    console.log(test);
 
+    new Promise((resolve, reject) => {
+        $.ajax({
+            type: "GET",
+            url: "/Product/GetCatagoryItems",
+            dataType: "JSON",
+            success: function (response) {
+                console.log(response);
+                fakeCategoryData = response.CatagoryList;
+                fakeProductData = response.ProductList;
+                fakeSubClassData = response.Attributes;
+
+                resolve("get Data from sql server Donme!!!");
+            },
+            error: function (r) {
+
+            }
         });
+    }).then((e) => {
+        getRealData();
+        initActivate();
     });
+
 }

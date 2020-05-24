@@ -8,6 +8,6 @@ namespace SurvivalGame.ViewModels.ProductMenu
     public class NormalViewModel
     {
         public string Title { get; set; }
-        public List<SubClassViewModel> Attribute { get; set; }
+        public List<SubClassViewModel> Attributes { get; set; }
     }
 }
