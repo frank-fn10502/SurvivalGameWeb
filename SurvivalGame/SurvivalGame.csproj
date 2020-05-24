@@ -158,13 +158,10 @@
     <Compile Include="ViewModels\ProductMenu\ColorItemViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\ColorViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\NormalViewModel.cs" />
-    <Compile Include="ViewModels\ProductMenu\ProductViewModel.cs" />
-    <Compile Include="ViewModels\ProductMenu\RangeViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\ProductMenuViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\RangeViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\SubClassViewMode.cs" />
-    <Compile Include="ViewModels\ProductMenu\ProductMenuViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\ProductViewModel.cs" />
-    <Compile Include="ViewModels\ProductMenu\RangeViewModel.cs" />
     <Compile Include="ViewModels\ProductMenu\SubClassViewMode.cs" />
   </ItemGroup>
   <ItemGroup>
