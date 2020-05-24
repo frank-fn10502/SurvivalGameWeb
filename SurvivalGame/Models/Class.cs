@@ -9,19 +9,26 @@ namespace SurvivalGame.Models
     [Table("Class")]
     public partial class Class
     {
-        [Key]
-        [Column(Order = 0)]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Class()
+        {
+            Products = new HashSet<Products>();
+        }
+
         [StringLength(10)]
         public string ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(10)]
         public string CatagoryID { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
+
+        public virtual Catagory Catagory { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Products> Products { get; set; }
     }
 }

@@ -9,32 +9,26 @@ namespace SurvivalGame.Models
     [Table("Order Details")]
     public partial class Order_Details
     {
-        [Key]
-        [Column(Order = 0)]
         [StringLength(10)]
         public string ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(10)]
         public string OrderID { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(10)]
         public string ProductID { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public short Quantity { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
         public float Discount { get; set; }
 
-        [Key]
-        [Column(Order = 5, TypeName = "money")]
+        [Column(TypeName = "money")]
         public decimal UnitPrice { get; set; }
+
+        public virtual Orders Orders { get; set; }
+
+        public virtual Products Products { get; set; }
     }
 }

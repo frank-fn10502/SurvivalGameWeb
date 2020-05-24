@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -49,10 +48,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -137,9 +136,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Catagory.cs" />
     <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\Imgs.cs" />
     <Compile Include="Models\Manufacturers.cs" />
     <Compile Include="Models\Members.cs" />
     <Compile Include="Models\Orders.cs" />
@@ -150,9 +149,20 @@
     <Compile Include="Models\Product_Attributes.cs" />
     <Compile Include="Models\RelatedProducts.cs" />
     <Compile Include="Models\SGModel.cs" />
-    <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\SGRepository.cs" />
+    <Compile Include="Services\ProductMenuService.cs" />
+    <Compile Include="ViewModels\ProductMenu\AttributesViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\CatagoryViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\ColorItemViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\ColorViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\NormalViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\ProductViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\RangeViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\ProductMenuViewModel.cs" />
+    <Compile Include="ViewModels\ProductMenu\SubClassViewMode.cs" />
+    <Compile Include="ViewModels\Index\ProductsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\animate.css" />
@@ -161,17 +171,18 @@
     <Content Include="Assets\css\font-awesome.min.css" />
     <Content Include="Assets\css\jquery-ui.min.css" />
     <Content Include="Assets\css\magnific-popup.css" />
-    <Content Include="Assets\css\MemberLogin\main.css" />
     <Content Include="Assets\css\MemberLogin\MemberLogin.css" />
-    <Content Include="Assets\css\MemberLogin\util.css" />
     <Content Include="Assets\css\MemberRegistered\MemberRegistered.css" />
     <Content Include="Assets\css\nice-select.css" />
     <Content Include="Assets\css\owl.carousel.css" />
     <Content Include="Assets\css\ProductDetails\ProductDetails.css" />
     <Content Include="Assets\css\productMenu\productMenu.css" />
     <Content Include="Assets\css\productMenu\reset.css" />
+    <Content Include="Assets\css\productMenu\shop.css" />
     <Content Include="Assets\css\ShoppingCart\ShoppingCart.css" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\fonts\classy.svg" />
+    <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\images\1.jpg" />
     <Content Include="Assets\images\2.jpg" />
     <Content Include="Assets\images\3.jpg" />
@@ -233,8 +244,6 @@
     <Content Include="Assets\images\bg-img\bg-6.jpg" />
     <Content Include="Assets\images\bg-img\bg-7.jpg" />
     <Content Include="Assets\images\bg-img\bg-8.jpg" />
-    <Content Include="Assets\images\bg-img\bg1.jpg" />
-    <Content Include="Assets\images\bg-img\bg2.jpg" />
     <Content Include="Assets\images\bg-img\blog1.jpg" />
     <Content Include="Assets\images\bg-img\blog2.jpg" />
     <Content Include="Assets\images\bg-img\blog3.jpg" />
@@ -341,9 +350,6 @@
     <Content Include="Assets\images\product-img\product-big-1.jpg" />
     <Content Include="Assets\images\product-img\product-big-2.jpg" />
     <Content Include="Assets\images\product-img\product-big-3.jpg" />
-    <Content Include="Assets\images\product-img\product.JPG" />
-    <Content Include="Assets\images\product-img\product1.jpg" />
-    <Content Include="Assets\images\product-img\product3.jpg" />
     <Content Include="Assets\images\Product1.png" />
     <Content Include="Assets\images\Product2.png" />
     <Content Include="Assets\images\Product3.png" />
@@ -352,11 +358,10 @@
     <Content Include="Assets\javaScript\active.js" />
     <Content Include="Assets\javaScript\classy-nav.min.js" />
     <Content Include="Assets\javaScript\jquery-2.2.4.min.js" />
-    <Content Include="Assets\javaScript\MemberRegistered\main.js" />
     <Content Include="Assets\javaScript\plugins.js" />
     <Content Include="Assets\javaScript\popper.min.js" />
     <Content Include="Assets\javaScript\productMenu\ExteriorHelper.js" />
-    <Content Include="Assets\javaScript\productMenu\productMenu.js" />
+    <Content Include="Assets\javaScript\productMenu\shop.js" />
     <Content Include="Assets\javaScript\ShoppingCarts\ShoppingCart.js" />
     <Content Include="Assets\javaScript\ShoppingCarts\smtp.js" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -381,25 +386,35 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Assets\css\productMenu\productMenu.css.map" />
+    <Content Include="Assets\css\productMenu\productMenu.scss" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="Assets\css\productMenu\productMenu.css.map" />
-    <Content Include="Assets\css\productMenu\productMenu.scss" />
+    <Content Include="Assets\fonts\classy.eot" />
+    <Content Include="Assets\fonts\classy.ttf" />
+    <Content Include="Assets\fonts\classy.woff" />
+    <Content Include="Assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\fonts\FontAwesome.otf" />
     <Content Include="Assets\xlsxData\產品資料.xlsx" />
     <None Include="Properties\PublishProfiles\bs2020survivalGame - Web Deploy.pubxml" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -509,13 +524,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\javaScript\MemberLogin\" />
-    <Folder Include="Services\" />
+    <Folder Include="tempModels\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
@@ -557,10 +569,7 @@
       <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

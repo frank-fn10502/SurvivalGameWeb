@@ -8,40 +8,43 @@ namespace SurvivalGame.Models
 
     public partial class Orders
     {
-        [Key]
-        [Column(Order = 0)]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Orders()
+        {
+            Order_Details = new HashSet<Order_Details>();
+            OrderSource = new HashSet<OrderSource>();
+        }
+
         [StringLength(10)]
         public string ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(10)]
         public string MemberID { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PaymentMethod { get; set; }
 
         [StringLength(50)]
         public string Depiction { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
+        [Required]
         [StringLength(50)]
         public string ShipAddress { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Status { get; set; }
 
-        [Key]
-        [Column(Order = 5, TypeName = "smalldatetime")]
+        [Column(TypeName = "smalldatetime")]
         public DateTime RequiredDate { get; set; }
 
-        [Key]
-        [Column(Order = 6, TypeName = "smalldatetime")]
+        [Column(TypeName = "smalldatetime")]
         public DateTime ShippedDate { get; set; }
+
+        public virtual Members Members { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_Details> Order_Details { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderSource> OrderSource { get; set; }
     }
 }

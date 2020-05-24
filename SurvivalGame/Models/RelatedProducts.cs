@@ -8,19 +8,17 @@ namespace SurvivalGame.Models
 
     public partial class RelatedProducts
     {
-        [Key]
-        [Column(Order = 0)]
         [StringLength(10)]
         public string ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(10)]
         public string ProductID { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(10)]
         public string RelationPID { get; set; }
+
+        public virtual Products Products { get; set; }
     }
 }

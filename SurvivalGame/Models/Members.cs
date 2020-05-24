@@ -8,43 +8,43 @@ namespace SurvivalGame.Models
 
     public partial class Members
     {
-        [Key]
-        [Column(Order = 0)]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Members()
+        {
+            Orders = new HashSet<Orders>();
+        }
+
         [StringLength(10)]
         public string ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(50)]
         public string Account { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
+        [Required]
         [StringLength(50)]
         public string Password { get; set; }
 
-        [Key]
-        [Column(Order = 4)]
+        [Required]
         [StringLength(10)]
         public string Mail { get; set; }
 
-        [Key]
-        [Column(Order = 5, TypeName = "smalldatetime")]
+        [Column(TypeName = "smalldatetime")]
         public DateTime Birthday { get; set; }
 
-        [Key]
-        [Column(Order = 6)]
+        [Required]
         [StringLength(50)]
         public string Address { get; set; }
 
-        [Key]
-        [Column(Order = 7)]
+        [Required]
         [StringLength(10)]
         public string Phone { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

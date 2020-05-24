@@ -8,13 +8,16 @@ namespace SurvivalGame.Models
 
     public partial class Manufacturers
     {
-        [Key]
-        [Column(Order = 0)]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Manufacturers()
+        {
+            Products = new HashSet<Products>();
+        }
+
         [StringLength(10)]
         public string ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
@@ -23,5 +26,8 @@ namespace SurvivalGame.Models
 
         [StringLength(50)]
         public string Img { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Products> Products { get; set; }
     }
 }

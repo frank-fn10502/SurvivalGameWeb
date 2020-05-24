@@ -9,24 +9,21 @@ namespace SurvivalGame.Models
     [Table("Product Attributes")]
     public partial class Product_Attributes
     {
-        [Key]
-        [Column(Order = 0)]
         [StringLength(10)]
         public string ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(10)]
         public string PID { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
+        [Required]
         [StringLength(150)]
         public string Value { get; set; }
+
+        public virtual Products Products { get; set; }
     }
 }

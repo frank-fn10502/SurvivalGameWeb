@@ -9,24 +9,19 @@ namespace SurvivalGame.Models
     [Table("OrderSource")]
     public partial class OrderSource
     {
-        [Key]
-        [Column(Order = 0)]
         [StringLength(10)]
         public string ID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(10)]
         public string OrderID { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
+        [Required]
         [StringLength(10)]
         public string ProcurementId { get; set; }
 
-        [Key]
-        [Column(Order = 3)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Quantity { get; set; }
+
+        public virtual Orders Orders { get; set; }
     }
 }
